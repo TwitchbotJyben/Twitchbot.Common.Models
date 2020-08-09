@@ -41,6 +41,11 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasColumnName("use_id")
                 .HasColumnType("int");
 
+            builder.Property(t => t.Name)
+                .HasColumnName("name")
+                .HasColumnType("nvarchar(50)")
+                .HasMaxLength(50);
+
             builder.Property(t => t.TypeId)
                 .IsRequired()
                 .HasColumnName("type_id")
@@ -69,6 +74,7 @@ namespace Twitchbot.Models.Data.Mapping
         public const string ColumnActivated = "activated";
         public const string ColumnResponse = "response";
         public const string ColumnUseId = "use_id";
+        public const string ColumnName = "name";
         public const string ColumnTypeId = "type_id";
         #endregion
     }

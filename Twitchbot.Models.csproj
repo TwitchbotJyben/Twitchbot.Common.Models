@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Twitchbot.Models.</RootNamespace>
+    <PackageId>Twitchbot.Models</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Jyben</Authors>
+    <Company>TwitchbotJyben</Company>
+    <PackageDescription>Models of Twitchbot</PackageDescription>
+    <RepositoryUrl>https://github.com/TwitchbotJyben/Twitchbot.Models</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

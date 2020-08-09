@@ -16,6 +16,8 @@ namespace Twitchbot.Models.Domain.Models
 
         public int UseId { get; set; }
 
+        public string Name { get; set; }
+
         public int TypeId { get; set; }
 
         #endregion

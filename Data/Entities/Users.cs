@@ -20,11 +20,15 @@ namespace Twitchbot.Models.Data.Entities
         #region Generated Properties
         public int Id { get; set; }
 
+        public int? RightId { get; set; }
+
         public string Name { get; set; }
 
         #endregion
 
         #region Generated Relationships
+        public virtual Rights RightRights { get; set; }
+
         public virtual ICollection<Commands> UseCommands { get; set; }
 
         public virtual ICollection<Events> UserEvents { get; set; }

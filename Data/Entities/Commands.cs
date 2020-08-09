@@ -21,6 +21,8 @@ namespace Twitchbot.Models.Data.Entities
 
         public int UseId { get; set; }
 
+        public string Name { get; set; }
+
         public int TypeId { get; set; }
 
         #endregion

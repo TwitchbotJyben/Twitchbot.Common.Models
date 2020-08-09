@@ -26,6 +26,11 @@ namespace Twitchbot.Models.Data.Queries
             return new ValueTask<Twitchbot.Models.Data.Entities.Users>(task);
         }
 
+        public static IQueryable<Twitchbot.Models.Data.Entities.Users> ByRightId(this IQueryable<Twitchbot.Models.Data.Entities.Users> queryable, int? rightId)
+        {
+            return queryable.Where(q => (q.RightId == rightId || (rightId == null && q.RightId == null)));
+        }
+
         #endregion
 
     }

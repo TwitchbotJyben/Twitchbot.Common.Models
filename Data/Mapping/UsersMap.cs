@@ -23,6 +23,10 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasColumnType("int")
                 .ValueGeneratedOnAdd();
 
+            builder.Property(t => t.RightId)
+                .HasColumnName("right_id")
+                .HasColumnType("int");
+
             builder.Property(t => t.Name)
                 .IsRequired()
                 .HasColumnName("name")
@@ -30,6 +34,11 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasMaxLength(100);
 
             // relationships
+            builder.HasOne(t => t.RightRights)
+                .WithMany(t => t.RightUsers)
+                .HasForeignKey(d => d.RightId)
+                .HasConstraintName("FK_users_rights");
+
             #endregion
         }
 
@@ -38,6 +47,7 @@ namespace Twitchbot.Models.Data.Mapping
         public const string TableName = "users";
 
         public const string ColumnId = "id";
+        public const string ColumnRightId = "right_id";
         public const string ColumnName = "name";
         #endregion
     }

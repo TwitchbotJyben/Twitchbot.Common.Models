@@ -4,7 +4,7 @@ project:
 database:
   provider: SqlServer
   connectionName: ConnectionStrings:twitchbot
-  userSecretsId: 
+  userSecretsId: f5f50105-2c6c-411e-98e8-a17ff0b3d6fc
   tableNaming: Singular
   tables: []
   schemas: []
@@ -24,7 +24,7 @@ data:
     directory: '{Project.Directory}\Data\Entities'
     document: false
   mapping:
-    namespace: '{Project.Namespace}.Data.Mapping'
+    namespace: '{Project.Namespace}.Models.Data.Mapping'
     directory: '{Project.Directory}\Data\Mapping'
     document: false
   query:

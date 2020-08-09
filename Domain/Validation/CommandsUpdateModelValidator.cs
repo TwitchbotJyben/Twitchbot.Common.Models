@@ -10,6 +10,7 @@ namespace Twitchbot.Models.Domain.Validation
         public CommandsUpdateModelValidator()
         {
             #region Generated Constructor
+            RuleFor(p => p.Name).MaximumLength(50);
             #endregion
         }
 

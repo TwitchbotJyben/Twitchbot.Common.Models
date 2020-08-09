@@ -3,14 +3,12 @@ using System.Collections.Generic;
 
 namespace Twitchbot.Models.Domain.Models
 {
-    public partial class UsersUpdateModel
+    public partial class RightsUpdateModel
     {
         #region Generated Properties
         public int Id { get; set; }
 
-        public int? RightId { get; set; }
-
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         #endregion
 
