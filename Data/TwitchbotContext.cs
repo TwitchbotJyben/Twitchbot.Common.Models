@@ -30,6 +30,8 @@ namespace Twitchbot.Models.Data
 
         public virtual DbSet<Twitchbot.Models.Data.Entities.Settings> Settings { get; set; }
 
+        public virtual DbSet<Twitchbot.Models.Data.Entities.Spotify> Spotifies { get; set; }
+
         public virtual DbSet<Twitchbot.Models.Data.Entities.Twitch> Twitches { get; set; }
 
         public virtual DbSet<Twitchbot.Models.Data.Entities.Users> Users { get; set; }
@@ -48,6 +50,7 @@ namespace Twitchbot.Models.Data
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.ModeratorsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.RightsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.SettingsMap());
+            modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.SpotifyMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.TwitchMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.UsersMap());
             #endregion

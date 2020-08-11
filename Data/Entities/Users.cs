@@ -29,6 +29,8 @@ namespace Twitchbot.Models.Data.Entities
         #region Generated Relationships
         public virtual Rights RightRights { get; set; }
 
+        public virtual Spotify Spotify { get; set; }
+
         public virtual ICollection<Commands> UseCommands { get; set; }
 
         public virtual ICollection<Events> UserEvents { get; set; }
