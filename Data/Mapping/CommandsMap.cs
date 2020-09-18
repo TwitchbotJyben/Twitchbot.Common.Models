@@ -11,7 +11,7 @@ namespace Twitchbot.Models.Data.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("commands", "dbo");
+            builder.ToTable("commands", "public");
 
             // key
             builder.HasKey(t => t.Id);
@@ -20,62 +20,68 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("int")
+                .HasColumnType("integer")
                 .ValueGeneratedOnAdd();
 
             builder.Property(t => t.Timer)
                 .HasColumnName("timer")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             builder.Property(t => t.Activated)
                 .IsRequired()
                 .HasColumnName("activated")
-                .HasColumnType("bit");
+                .HasColumnType("boolean");
 
             builder.Property(t => t.Response)
                 .HasColumnName("response")
-                .HasColumnType("nvarchar(max)");
+                .HasColumnType("character varying");
 
             builder.Property(t => t.UseId)
                 .IsRequired()
                 .HasColumnName("use_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             builder.Property(t => t.Name)
                 .HasColumnName("name")
-                .HasColumnType("nvarchar(50)")
+                .HasColumnType("character varying(50)")
                 .HasMaxLength(50);
 
             builder.Property(t => t.TypeId)
                 .IsRequired()
                 .HasColumnName("type_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             // relationships
             builder.HasOne(t => t.TypeCommandsType)
                 .WithMany(t => t.TypeCommands)
                 .HasForeignKey(d => d.TypeId)
-                .HasConstraintName("FK_commands_common_commands_type_common");
+                .HasConstraintName("fk_commands_common_commands_type_common");
 
             builder.HasOne(t => t.UseUsers)
                 .WithMany(t => t.UseCommands)
                 .HasForeignKey(d => d.UseId)
-                .HasConstraintName("FK_commands_common_users_common");
+                .HasConstraintName("fk_commands_common_users_common");
 
             #endregion
         }
 
         #region Generated Constants
-        public const string TableSchema = "dbo";
-        public const string TableName = "commands";
+        public struct Table
+        {
+            public const string Schema = "public";
+            public const string Name = "commands";
+        }
 
-        public const string ColumnId = "id";
-        public const string ColumnTimer = "timer";
-        public const string ColumnActivated = "activated";
-        public const string ColumnResponse = "response";
-        public const string ColumnUseId = "use_id";
-        public const string ColumnName = "name";
-        public const string ColumnTypeId = "type_id";
+        public struct Columns
+        {
+            public const string Id = "id";
+            public const string Timer = "timer";
+            public const string Activated = "activated";
+            public const string Response = "response";
+            public const string UseId = "use_id";
+            public const string Name = "name";
+            public const string TypeId = "type_id";
+        }
         #endregion
     }
 }

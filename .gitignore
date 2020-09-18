@@ -37,3 +37,11 @@ msbuild.wrn
 .vs/
 
 nuget.config
+Data/Entities/PgStatStatements.cs
+Data/Queries/PgStatStatementsExtensions.cs
+Domain/Mapping/PgStatStatementsProfile.cs
+Domain/Models/PgStatStatementsReadModel.cs
+Domain/Models/PgStatStatementsCreateModel.cs
+Domain/Models/PgStatStatementsUpdateModel.cs
+Domain/Validation/PgStatStatementsCreateModelValidator.cs
+Domain/Validation/PgStatStatementsUpdateModelValidator.cs

@@ -11,7 +11,7 @@ namespace Twitchbot.Models.Data.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("settings", "dbo");
+            builder.ToTable("settings", "public");
 
             // key
             builder.HasKey(t => t.Id);
@@ -20,42 +20,48 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("int")
+                .HasColumnType("integer")
                 .ValueGeneratedOnAdd();
 
             builder.Property(t => t.Name)
                 .IsRequired()
                 .HasColumnName("name")
-                .HasColumnType("nvarchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             builder.Property(t => t.Activated)
                 .IsRequired()
                 .HasColumnName("activated")
-                .HasColumnType("bit");
+                .HasColumnType("boolean");
 
             builder.Property(t => t.UserId)
                 .IsRequired()
                 .HasColumnName("user_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             // relationships
             builder.HasOne(t => t.UserUsers)
                 .WithMany(t => t.UserSettings)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_settings_common_users_common");
+                .HasConstraintName("fk_settings_common_users_common");
 
             #endregion
         }
 
         #region Generated Constants
-        public const string TableSchema = "dbo";
-        public const string TableName = "settings";
+        public struct Table
+        {
+            public const string Schema = "public";
+            public const string Name = "settings";
+        }
 
-        public const string ColumnId = "id";
-        public const string ColumnName = "name";
-        public const string ColumnActivated = "activated";
-        public const string ColumnUserId = "user_id";
+        public struct Columns
+        {
+            public const string Id = "id";
+            public const string Name = "name";
+            public const string Activated = "activated";
+            public const string UserId = "user_id";
+        }
         #endregion
     }
 }

@@ -11,7 +11,7 @@ namespace Twitchbot.Models.Data.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("spotify", "dbo");
+            builder.ToTable("spotify", "public");
 
             // key
             builder.HasKey(t => t.Id);
@@ -20,40 +20,46 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             builder.Property(t => t.Token)
                 .HasColumnName("token")
-                .HasColumnType("varchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             builder.Property(t => t.RefreshToken)
                 .HasColumnName("refresh_token")
-                .HasColumnType("varchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             builder.Property(t => t.UserId)
                 .IsRequired()
                 .HasColumnName("user_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             // relationships
             builder.HasOne(t => t.Users)
                 .WithOne(t => t.Spotify)
                 .HasForeignKey<Twitchbot.Models.Data.Entities.Spotify>(d => d.Id)
-                .HasConstraintName("FK_spotify_user");
+                .HasConstraintName("fk_spotify_user");
 
             #endregion
         }
 
         #region Generated Constants
-        public const string TableSchema = "dbo";
-        public const string TableName = "spotify";
+        public struct Table
+        {
+            public const string Schema = "public";
+            public const string Name = "spotify";
+        }
 
-        public const string ColumnId = "id";
-        public const string ColumnToken = "token";
-        public const string ColumnRefreshToken = "refresh_token";
-        public const string ColumnUserId = "user_id";
+        public struct Columns
+        {
+            public const string Id = "id";
+            public const string Token = "token";
+            public const string RefreshToken = "refresh_token";
+            public const string UserId = "user_id";
+        }
         #endregion
     }
 }

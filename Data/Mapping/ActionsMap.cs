@@ -11,7 +11,7 @@ namespace Twitchbot.Models.Data.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("actions", "dbo");
+            builder.ToTable("actions", "public");
 
             // key
             builder.HasKey(t => t.Id);
@@ -20,13 +20,13 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("int")
+                .HasColumnType("integer")
                 .ValueGeneratedOnAdd();
 
             builder.Property(t => t.Name)
                 .IsRequired()
                 .HasColumnName("name")
-                .HasColumnType("nvarchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             // relationships
@@ -34,11 +34,17 @@ namespace Twitchbot.Models.Data.Mapping
         }
 
         #region Generated Constants
-        public const string TableSchema = "dbo";
-        public const string TableName = "actions";
+        public struct Table
+        {
+            public const string Schema = "public";
+            public const string Name = "actions";
+        }
 
-        public const string ColumnId = "id";
-        public const string ColumnName = "name";
+        public struct Columns
+        {
+            public const string Id = "id";
+            public const string Name = "name";
+        }
         #endregion
     }
 }

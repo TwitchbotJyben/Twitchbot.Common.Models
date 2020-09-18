@@ -26,6 +26,8 @@ namespace Twitchbot.Models.Data
 
         public virtual DbSet<Twitchbot.Models.Data.Entities.Moderators> Moderators { get; set; }
 
+        public virtual DbSet<Twitchbot.Models.Data.Entities.PgStatStatements> PgStatStatements { get; set; }
+
         public virtual DbSet<Twitchbot.Models.Data.Entities.Rights> Rights { get; set; }
 
         public virtual DbSet<Twitchbot.Models.Data.Entities.Settings> Settings { get; set; }
@@ -48,6 +50,7 @@ namespace Twitchbot.Models.Data
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.EventsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.ExtensionMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.ModeratorsMap());
+            modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.PgStatStatementsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.RightsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.SettingsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Models.Data.Mapping.SpotifyMap());

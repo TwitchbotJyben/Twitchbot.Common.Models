@@ -11,7 +11,7 @@ namespace Twitchbot.Models.Data.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("users", "dbo");
+            builder.ToTable("users", "public");
 
             // key
             builder.HasKey(t => t.Id);
@@ -20,35 +20,41 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("int")
+                .HasColumnType("integer")
                 .ValueGeneratedOnAdd();
 
             builder.Property(t => t.RightId)
                 .HasColumnName("right_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             builder.Property(t => t.Name)
                 .IsRequired()
                 .HasColumnName("name")
-                .HasColumnType("nvarchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             // relationships
             builder.HasOne(t => t.RightRights)
                 .WithMany(t => t.RightUsers)
                 .HasForeignKey(d => d.RightId)
-                .HasConstraintName("FK_users_rights");
+                .HasConstraintName("fk_users_rights");
 
             #endregion
         }
 
         #region Generated Constants
-        public const string TableSchema = "dbo";
-        public const string TableName = "users";
+        public struct Table
+        {
+            public const string Schema = "public";
+            public const string Name = "users";
+        }
 
-        public const string ColumnId = "id";
-        public const string ColumnRightId = "right_id";
-        public const string ColumnName = "name";
+        public struct Columns
+        {
+            public const string Id = "id";
+            public const string RightId = "right_id";
+            public const string Name = "name";
+        }
         #endregion
     }
 }

@@ -11,7 +11,7 @@ namespace Twitchbot.Models.Data.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("events", "dbo");
+            builder.ToTable("events", "public");
 
             // key
             builder.HasKey(t => t.Id);
@@ -20,71 +20,77 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("int")
+                .HasColumnType("integer")
                 .ValueGeneratedOnAdd();
 
             builder.Property(t => t.UserName)
                 .IsRequired()
                 .HasColumnName("user_name")
-                .HasColumnType("nvarchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             builder.Property(t => t.Time)
                 .IsRequired()
                 .HasColumnName("time")
-                .HasColumnType("datetime");
+                .HasColumnType("timestamp without time zone");
 
             builder.Property(t => t.Object)
                 .IsRequired()
                 .HasColumnName("object")
-                .HasColumnType("nvarchar(100)")
+                .HasColumnType("character varying(100)")
                 .HasMaxLength(100);
 
             builder.Property(t => t.ActionId)
                 .IsRequired()
                 .HasColumnName("action_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             builder.Property(t => t.CategoryId)
                 .IsRequired()
                 .HasColumnName("category_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             builder.Property(t => t.UserId)
                 .IsRequired()
                 .HasColumnName("user_id")
-                .HasColumnType("int");
+                .HasColumnType("integer");
 
             // relationships
             builder.HasOne(t => t.ActionActions)
                 .WithMany(t => t.ActionEvents)
                 .HasForeignKey(d => d.ActionId)
-                .HasConstraintName("FK_events_web_actions_web");
+                .HasConstraintName("fk_events_web_actions_web");
 
             builder.HasOne(t => t.CategoryEventsCategories)
                 .WithMany(t => t.CategoryEvents)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK_events_web_categories_web");
+                .HasConstraintName("fk_events_web_categories_web");
 
             builder.HasOne(t => t.UserUsers)
                 .WithMany(t => t.UserEvents)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_events_web_users_common");
+                .HasConstraintName("fk_events_web_users_common");
 
             #endregion
         }
 
         #region Generated Constants
-        public const string TableSchema = "dbo";
-        public const string TableName = "events";
+        public struct Table
+        {
+            public const string Schema = "public";
+            public const string Name = "events";
+        }
 
-        public const string ColumnId = "id";
-        public const string ColumnUserName = "user_name";
-        public const string ColumnTime = "time";
-        public const string ColumnObject = "object";
-        public const string ColumnActionId = "action_id";
-        public const string ColumnCategoryId = "category_id";
-        public const string ColumnUserId = "user_id";
+        public struct Columns
+        {
+            public const string Id = "id";
+            public const string UserName = "user_name";
+            public const string Time = "time";
+            public const string Object = "object";
+            public const string ActionId = "action_id";
+            public const string CategoryId = "category_id";
+            public const string UserId = "user_id";
+        }
         #endregion
     }
 }

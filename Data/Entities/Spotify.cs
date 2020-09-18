@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Twitchbot.Models.Definitions;
 
 namespace Twitchbot.Models.Data.Entities
 {
-    public partial class Spotify
+    public partial class Spotify : IHaveIdentifier
     {
         public Spotify()
         {
