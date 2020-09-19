@@ -26,6 +26,11 @@ namespace Twitchbot.Models.Data.Queries
             return new ValueTask<Twitchbot.Models.Data.Entities.Spotify>(task);
         }
 
+        public static IQueryable<Twitchbot.Models.Data.Entities.Spotify> ByUserId(this IQueryable<Twitchbot.Models.Data.Entities.Spotify> queryable, int userId)
+        {
+            return queryable.Where(q => q.UserId == userId);
+        }
+
         #endregion
 
     }

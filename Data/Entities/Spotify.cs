@@ -24,7 +24,7 @@ namespace Twitchbot.Models.Data.Entities
         #endregion
 
         #region Generated Relationships
-        public virtual Users Users { get; set; }
+        public virtual Users UserUsers { get; set; }
 
         #endregion
 

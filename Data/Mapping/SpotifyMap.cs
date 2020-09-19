@@ -20,17 +20,18 @@ namespace Twitchbot.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("integer");
+                .HasColumnType("integer")
+                .ValueGeneratedOnAdd();
 
             builder.Property(t => t.Token)
                 .HasColumnName("token")
-                .HasColumnType("character varying(100)")
-                .HasMaxLength(100);
+                .HasColumnType("character varying(500)")
+                .HasMaxLength(500);
 
             builder.Property(t => t.RefreshToken)
                 .HasColumnName("refresh_token")
-                .HasColumnType("character varying(100)")
-                .HasMaxLength(100);
+                .HasColumnType("character varying(500)")
+                .HasMaxLength(500);
 
             builder.Property(t => t.UserId)
                 .IsRequired()
@@ -38,9 +39,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasColumnType("integer");
 
             // relationships
-            builder.HasOne(t => t.Users)
-                .WithOne(t => t.Spotify)
-                .HasForeignKey<Twitchbot.Models.Data.Entities.Spotify>(d => d.Id)
+            builder.HasOne(t => t.UserUsers)
+                .WithMany(t => t.UserSpotifies)
+                .HasForeignKey(d => d.UserId)
                 .HasConstraintName("fk_spotify_user");
 
             #endregion
