@@ -14,6 +14,10 @@ namespace Twitchbot.Models.Domain.Models
 
         public int UserId { get; set; }
 
+        public int? ExpiresIn { get; set; }
+
+        public DateTime? Time { get; set; }
+
         #endregion
 
     }

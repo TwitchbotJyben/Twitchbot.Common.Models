@@ -38,6 +38,14 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasColumnName("user_id")
                 .HasColumnType("integer");
 
+            builder.Property(t => t.ExpiresIn)
+                .HasColumnName("expires_in")
+                .HasColumnType("integer");
+
+            builder.Property(t => t.Time)
+                .HasColumnName("time")
+                .HasColumnType("timestamp without time zone");
+
             // relationships
             builder.HasOne(t => t.UserUsers)
                 .WithMany(t => t.UserSpotifies)
@@ -60,6 +68,8 @@ namespace Twitchbot.Models.Data.Mapping
             public const string Token = "token";
             public const string RefreshToken = "refresh_token";
             public const string UserId = "user_id";
+            public const string ExpiresIn = "expires_in";
+            public const string Time = "time";
         }
         #endregion
     }

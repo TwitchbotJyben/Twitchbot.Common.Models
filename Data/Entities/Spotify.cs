@@ -21,6 +21,10 @@ namespace Twitchbot.Models.Data.Entities
 
         public int UserId { get; set; }
 
+        public int? ExpiresIn { get; set; }
+
+        public DateTime? Time { get; set; }
+
         #endregion
 
         #region Generated Relationships
