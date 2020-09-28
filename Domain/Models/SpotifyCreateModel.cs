@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Twitchbot.Models.Domain.Models
+namespace Twitchbot.Common.Models.Domain.Models
 {
     public partial class SpotifyCreateModel
     {

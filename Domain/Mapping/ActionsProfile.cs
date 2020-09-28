@@ -1,24 +1,24 @@
 using System;
 using AutoMapper;
-using Twitchbot.Models.Data.Entities;
-using Twitchbot.Models.Domain.Models;
+using Twitchbot.Common.Models.Data.Entities;
+using Twitchbot.Common.Models.Domain.Models;
 
-namespace Twitchbot.Models.Domain.Mapping
+namespace Twitchbot.Common.Models.Domain.Mapping
 {
     public partial class ActionsProfile
         : AutoMapper.Profile
-    {
-        public ActionsProfile()
         {
-            CreateMap<Twitchbot.Models.Data.Entities.Actions, Twitchbot.Models.Domain.Models.ActionsReadModel>();
+            public ActionsProfile()
+            {
+                CreateMap<Twitchbot.Common.Models.Data.Entities.Actions, Twitchbot.Common.Models.Domain.Models.ActionsReadModel>();
 
-            CreateMap<Twitchbot.Models.Domain.Models.ActionsCreateModel, Twitchbot.Models.Data.Entities.Actions>();
+                CreateMap<Twitchbot.Common.Models.Domain.Models.ActionsCreateModel, Twitchbot.Common.Models.Data.Entities.Actions>();
 
-            CreateMap<Twitchbot.Models.Data.Entities.Actions, Twitchbot.Models.Domain.Models.ActionsUpdateModel>();
+                CreateMap<Twitchbot.Common.Models.Data.Entities.Actions, Twitchbot.Common.Models.Domain.Models.ActionsUpdateModel>();
 
-            CreateMap<Twitchbot.Models.Domain.Models.ActionsUpdateModel, Twitchbot.Models.Data.Entities.Actions>();
+                CreateMap<Twitchbot.Common.Models.Domain.Models.ActionsUpdateModel, Twitchbot.Common.Models.Data.Entities.Actions>();
+
+            }
 
         }
-
-    }
 }

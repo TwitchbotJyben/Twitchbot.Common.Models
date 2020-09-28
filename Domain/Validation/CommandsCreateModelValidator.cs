@@ -1,18 +1,18 @@
 using System;
 using FluentValidation;
-using Twitchbot.Models.Domain.Models;
+using Twitchbot.Common.Models.Domain.Models;
 
-namespace Twitchbot.Models.Domain.Validation
+namespace Twitchbot.Common.Models.Domain.Validation
 {
     public partial class CommandsCreateModelValidator
         : AbstractValidator<CommandsCreateModel>
-    {
-        public CommandsCreateModelValidator()
         {
-            #region Generated Constructor
+            public CommandsCreateModelValidator()
+            {
+                #region Generated Constructor
             RuleFor(p => p.Name).MaximumLength(50);
             #endregion
-        }
+            }
 
-    }
+        }
 }

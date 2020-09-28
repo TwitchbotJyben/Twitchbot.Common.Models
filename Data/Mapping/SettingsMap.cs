@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class SettingsMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Settings>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Settings> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Settings>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Settings> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("settings", "public");
 
@@ -46,9 +46,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasConstraintName("fk_settings_common_users_common");
 
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -63,5 +63,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string UserId = "user_id";
         }
         #endregion
-    }
+        }
 }

@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class SpotifyMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Spotify>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Spotify> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Spotify>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Spotify> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("spotify", "public");
 
@@ -53,9 +53,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasConstraintName("fk_spotify_user");
 
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -72,5 +72,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string Time = "time";
         }
         #endregion
-    }
+        }
 }

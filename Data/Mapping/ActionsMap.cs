@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class ActionsMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Actions>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Actions> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Actions>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Actions> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("actions", "public");
 
@@ -31,9 +31,9 @@ namespace Twitchbot.Models.Data.Mapping
 
             // relationships
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -46,5 +46,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string Name = "name";
         }
         #endregion
-    }
+        }
 }

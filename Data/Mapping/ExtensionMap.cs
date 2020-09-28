@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class ExtensionMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Extension>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Extension> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Extension>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Extension> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("extension", "public");
 
@@ -46,9 +46,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasConstraintName("fk_extension_web_users_common");
 
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -63,5 +63,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string UserId = "user_id";
         }
         #endregion
-    }
+        }
 }

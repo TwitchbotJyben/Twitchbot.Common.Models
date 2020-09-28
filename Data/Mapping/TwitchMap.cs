@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class TwitchMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Twitch>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Twitch> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Twitch>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Twitch> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("twitch", "public");
 
@@ -50,9 +50,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasConstraintName("fk_twitch_users");
 
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -68,5 +68,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string RefreshToken = "refresh_token";
         }
         #endregion
-    }
+        }
 }

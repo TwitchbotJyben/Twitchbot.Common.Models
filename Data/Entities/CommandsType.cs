@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Twitchbot.Models.Definitions;
+using Twitchbot.Common.Models.Definitions;
 
-namespace Twitchbot.Models.Data.Entities
+namespace Twitchbot.Common.Models.Data.Entities
 {
     public partial class CommandsType : IHaveIdentifier
     {

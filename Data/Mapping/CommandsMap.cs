@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class CommandsMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Commands>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Commands> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Commands>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Commands> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("commands", "public");
 
@@ -63,9 +63,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasConstraintName("fk_commands_common_users_common");
 
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -83,5 +83,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string TypeId = "type_id";
         }
         #endregion
-    }
+        }
 }

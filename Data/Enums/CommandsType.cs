@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Twitchbot.Models.Data.Enums
+namespace Twitchbot.Common.Models.Data.Enums
 {
     public enum CommandsType
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Twitchbot.Models.Definitions
+namespace Twitchbot.Common.Models.Definitions
 {
     public interface IHaveIdentifier
     {

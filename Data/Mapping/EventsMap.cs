@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Twitchbot.Models.Data.Mapping
+namespace Twitchbot.Common.Models.Data.Mapping
 {
     public partial class EventsMap
-        : IEntityTypeConfiguration<Twitchbot.Models.Data.Entities.Events>
-    {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Models.Data.Entities.Events> builder)
+        : IEntityTypeConfiguration<Twitchbot.Common.Models.Data.Entities.Events>
         {
-            #region Generated Configure
+            public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Twitchbot.Common.Models.Data.Entities.Events> builder)
+            {
+                #region Generated Configure
             // table
             builder.ToTable("events", "public");
 
@@ -72,9 +72,9 @@ namespace Twitchbot.Models.Data.Mapping
                 .HasConstraintName("fk_events_web_users_common");
 
             #endregion
-        }
+            }
 
-        #region Generated Constants
+            #region Generated Constants
         public struct Table
         {
             public const string Schema = "public";
@@ -92,5 +92,5 @@ namespace Twitchbot.Models.Data.Mapping
             public const string UserId = "user_id";
         }
         #endregion
-    }
+        }
 }

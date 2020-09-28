@@ -1,17 +1,17 @@
 using System;
 using FluentValidation;
-using Twitchbot.Models.Domain.Models;
+using Twitchbot.Common.Models.Domain.Models;
 
-namespace Twitchbot.Models.Domain.Validation
+namespace Twitchbot.Common.Models.Domain.Validation
 {
     public partial class RightsCreateModelValidator
         : AbstractValidator<RightsCreateModel>
-    {
-        public RightsCreateModelValidator()
         {
-            #region Generated Constructor
+            public RightsCreateModelValidator()
+            {
+                #region Generated Constructor
             #endregion
-        }
+            }
 
-    }
+        }
 }

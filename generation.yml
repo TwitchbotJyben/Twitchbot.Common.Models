@@ -18,23 +18,23 @@ data:
     entityNaming: Singular
     relationshipNaming: Plural
     prefixWithSchemaName: false
-    namespace: '{Project.Namespace}.Models.Data.Entities'
+    namespace: '{Project.Namespace}.Common.Models.Data.Entities'
     directory: '{Project.Directory}/Data/Entities'
     document: false
   mapping:
-    namespace: '{Project.Namespace}.Models.Data.Mapping'
+    namespace: '{Project.Namespace}.Common.Models.Data.Mapping'
     directory: '{Project.Directory}/Data/Mapping'
     document: false
   query:
     generate: true
     indexPrefix: By
     uniquePrefix: GetBy
-    namespace: '{Project.Namespace}.Models.Data.Queries'
+    namespace: '{Project.Namespace}.Common.Models.Data.Queries'
     directory: '{Project.Directory}/Data/Queries'
     document: false
 model:
   shared:
-    namespace: '{Project.Namespace}.Models.Domain.Models'
+    namespace: '{Project.Namespace}.Common.Models.Domain.Models'
     directory: '{Project.Directory}/Domain/Models'
   read:
     generate: true
@@ -52,13 +52,13 @@ model:
     generate: true
     name: '{Entity.Name}Profile'
     baseClass: AutoMapper.Profile
-    namespace: '{Project.Namespace}.Models.Domain.Mapping'
+    namespace: '{Project.Namespace}.Common.Models.Domain.Mapping'
     directory: '{Project.Directory}/Domain/Mapping'
     document: false
   validator:
     generate: true
     name: '{Model.Name}Validator'
     baseClass: AbstractValidator<{Model.Name}>
-    namespace: '{Project.Namespace}.Models.Domain.Validation'
+    namespace: '{Project.Namespace}.Common.Models.Domain.Validation'
     directory: '{Project.Directory}/Domain/Validation'
     document: false

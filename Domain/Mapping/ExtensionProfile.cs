@@ -1,24 +1,24 @@
 using System;
 using AutoMapper;
-using Twitchbot.Models.Data.Entities;
-using Twitchbot.Models.Domain.Models;
+using Twitchbot.Common.Models.Data.Entities;
+using Twitchbot.Common.Models.Domain.Models;
 
-namespace Twitchbot.Models.Domain.Mapping
+namespace Twitchbot.Common.Models.Domain.Mapping
 {
     public partial class ExtensionProfile
         : AutoMapper.Profile
-    {
-        public ExtensionProfile()
         {
-            CreateMap<Twitchbot.Models.Data.Entities.Extension, Twitchbot.Models.Domain.Models.ExtensionReadModel>();
+            public ExtensionProfile()
+            {
+                CreateMap<Twitchbot.Common.Models.Data.Entities.Extension, Twitchbot.Common.Models.Domain.Models.ExtensionReadModel>();
 
-            CreateMap<Twitchbot.Models.Domain.Models.ExtensionCreateModel, Twitchbot.Models.Data.Entities.Extension>();
+                CreateMap<Twitchbot.Common.Models.Domain.Models.ExtensionCreateModel, Twitchbot.Common.Models.Data.Entities.Extension>();
 
-            CreateMap<Twitchbot.Models.Data.Entities.Extension, Twitchbot.Models.Domain.Models.ExtensionUpdateModel>();
+                CreateMap<Twitchbot.Common.Models.Data.Entities.Extension, Twitchbot.Common.Models.Domain.Models.ExtensionUpdateModel>();
 
-            CreateMap<Twitchbot.Models.Domain.Models.ExtensionUpdateModel, Twitchbot.Models.Data.Entities.Extension>();
+                CreateMap<Twitchbot.Common.Models.Domain.Models.ExtensionUpdateModel, Twitchbot.Common.Models.Data.Entities.Extension>();
+
+            }
 
         }
-
-    }
 }

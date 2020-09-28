@@ -2,13 +2,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Twitchbot.Models.</RootNamespace>
-    <PackageId>Twitchbot.Models</PackageId>
-    <Version>1.0.8</Version>
+    <RootNamespace>Twitchbot.Common.Models</RootNamespace>
+    <PackageId>Twitchbot.Common.Models</PackageId>
+    <Version>1.0.9</Version>
     <Authors>Jyben</Authors>
     <Company>TwitchbotJyben</Company>
     <PackageDescription>Models of Twitchbot</PackageDescription>
-    <RepositoryUrl>https://github.com/TwitchbotJyben/Twitchbot.Models</RepositoryUrl>
+    <RepositoryUrl>https://github.com/TwitchbotJyben/Twitchbot.Common.Models</RepositoryUrl>
     <UserSecretsId>d2c9a294-5127-4f0f-909c-2e7367dc35c8</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
