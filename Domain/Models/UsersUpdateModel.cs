@@ -12,6 +12,8 @@ namespace Twitchbot.Common.Models.Domain.Models
 
         public string Name { get; set; }
 
+        public int? TokenId { get; set; }
+
         #endregion
 
     }

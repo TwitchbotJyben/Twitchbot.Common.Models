@@ -25,10 +25,14 @@ namespace Twitchbot.Common.Models.Data.Entities
 
         public string Name { get; set; }
 
+        public int? TokenId { get; set; }
+
         #endregion
 
         #region Generated Relationships
         public virtual Rights RightRights { get; set; }
+
+        public virtual Tokens TokenTokens { get; set; }
 
         public virtual ICollection<Commands> UseCommands { get; set; }
 

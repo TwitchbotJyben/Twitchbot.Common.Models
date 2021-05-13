@@ -45,3 +45,5 @@ Domain/Models/PgStatStatementsCreateModel.cs
 Domain/Models/PgStatStatementsUpdateModel.cs
 Domain/Validation/PgStatStatementsCreateModelValidator.cs
 Domain/Validation/PgStatStatementsUpdateModelValidator.cs
+Data/Mapping/PgStatStatementsMap.cs
+Data/Mapping/PgStatStatementsMap.cs

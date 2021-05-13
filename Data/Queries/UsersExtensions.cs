@@ -31,6 +31,11 @@ namespace Twitchbot.Common.Models.Data.Queries
             return queryable.Where(q => (q.RightId == rightId || (rightId == null && q.RightId == null)));
         }
 
+        public static IQueryable<Twitchbot.Common.Models.Data.Entities.Users> ByTokenId(this IQueryable<Twitchbot.Common.Models.Data.Entities.Users> queryable, int? tokenId)
+        {
+            return queryable.Where(q => (q.TokenId == tokenId || (tokenId == null && q.TokenId == null)));
+        }
+
         #endregion
 
     }

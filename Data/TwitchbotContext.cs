@@ -23,11 +23,15 @@ namespace Twitchbot.Common.Models.Data
 
         public virtual DbSet<Twitchbot.Common.Models.Data.Entities.Moderators> Moderators { get; set; }
 
+        public virtual DbSet<Twitchbot.Common.Models.Data.Entities.PgStatStatements> PgStatStatements { get; set; }
+
         public virtual DbSet<Twitchbot.Common.Models.Data.Entities.Rights> Rights { get; set; }
 
         public virtual DbSet<Twitchbot.Common.Models.Data.Entities.Settings> Settings { get; set; }
 
         public virtual DbSet<Twitchbot.Common.Models.Data.Entities.Spotify> Spotifies { get; set; }
+
+        public virtual DbSet<Twitchbot.Common.Models.Data.Entities.Tokens> Tokens { get; set; }
 
         public virtual DbSet<Twitchbot.Common.Models.Data.Entities.Twitch> Twitches { get; set; }
 
@@ -45,9 +49,11 @@ namespace Twitchbot.Common.Models.Data
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.EventsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.ExtensionMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.ModeratorsMap());
+            modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.PgStatStatementsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.RightsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.SettingsMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.SpotifyMap());
+            modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.TokensMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.TwitchMap());
             modelBuilder.ApplyConfiguration(new Twitchbot.Common.Models.Data.Mapping.UsersMap());
             #endregion
