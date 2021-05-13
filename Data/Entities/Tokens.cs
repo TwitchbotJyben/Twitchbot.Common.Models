@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Twitchbot.Common.Models.Definitions;
 
 namespace Twitchbot.Common.Models.Data.Entities
 {
-    public partial class Tokens
+    public partial class Tokens : IHaveIdentifier
     {
         public Tokens()
         {
