@@ -5,13 +5,13 @@ namespace Twitchbot.Common.Models.Data.Enums
 {
     public enum Roles
     {
-        [Description("Admin")]
-        Admin,
+        [Description("User")]
+        User,
         [Description("Moderator")]
         Moderator,
         [Description("App")]
         App,
-        [Description("User")]
-        User
+        [Description("Admin")]
+        Admin
     }
 }
