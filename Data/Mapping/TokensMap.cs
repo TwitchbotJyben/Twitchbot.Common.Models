@@ -20,7 +20,8 @@ namespace Twitchbot.Common.Models.Data.Mapping
             builder.Property(t => t.Id)
                 .IsRequired()
                 .HasColumnName("id")
-                .HasColumnType("integer");
+                .HasColumnType("integer")
+                .ValueGeneratedOnAdd();
 
             builder.Property(t => t.Token)
                 .IsRequired()
